@@ -6,6 +6,13 @@ terraform {
       version = "~> 4.18"
     }
   }
+
+  backend "s3" {
+    bucket  = "tastylog-tfstate-bucket-20220612"
+    key     = "tastylog.dev.tfstate"
+    region  = "ap-northeast-1"
+    profile = "terraform"
+  }
 }
 
 # ----------------------
